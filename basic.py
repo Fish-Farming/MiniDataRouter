@@ -21,7 +21,12 @@ def main(args):
                 time.sleep(0.5)
             now = datetime.datetime.now()
             print(now)
-            print(json.loads(response))
+            try:
+                res = json.loads(response)
+                print(res)
+            except:
+                print("JSON Parser Error")
+                res = {}
             time.sleep(60)
     return 0
             
